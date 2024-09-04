@@ -35,6 +35,11 @@ p {
     margin-bottom: 2em;
 }
 
+.largeBr {
+    display: block;
+    margin-bottom: 12em;
+}
+
 footer {
     background-color: #212532;
     color: white;
