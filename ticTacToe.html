@@ -19,8 +19,19 @@
 
 <body>
 
-<div class="container">
-    <div class="status" id="status"></div>
+<!-- <div class="container">
+    <div class="status" id="status"></div> -->
+
+    <div id="game-options">
+        <div class="center">
+        <button id="play-person">Play vs Person</button>
+        <div class="br"></div>
+        <button id="play-bot">Play vs Bot</button>
+        </div>
+    </div>
+    <div id="game" style="display:none;">
+        <h1 id="status">Player X's turn</h1>
+
     <div class="board">
         <div class="cell" data-index="0"></div>
         <div class="cell" data-index="1"></div>
@@ -33,6 +44,8 @@
         <div class="cell" data-index="8"></div>
     </div>
     <button id="resetButton">Reset Game</button>
+    <div class="br"></div>
+    <button id="backButton">Back to Options</button>
 </div>
 <script src="ticTacToe.js"></script>
 

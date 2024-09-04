@@ -53,9 +53,11 @@ body {
     background-color: #e0e0e0;
 }
 
+
 button#resetButton {
+    margin-top: 20px;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 3em;
     background-color: #007bff;
     color: white;
     border: none;
@@ -65,4 +67,47 @@ button#resetButton {
 
 button#resetButton:hover {
     background-color: #0056b3;
+}
+
+
+button#play-person {
+    padding: 10px 20px;
+    font-size: 8em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+button#play-person:hover {
+    background-color: #0056b3;
+}
+
+
+button#play-bot {
+    padding: 10px 20px;
+    font-size: 8em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button#play-bot:hover {
+    background-color: #0056b3;
+}
+
+button#backButton {
+    padding: 10px 20px;
+    font-size: 2em;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

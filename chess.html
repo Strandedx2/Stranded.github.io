@@ -14,17 +14,22 @@
 
 
 <h1>Welcome to the Chess page</h1>
-<p>On this page we can play Chess</p>
+
 </header>
 
 <body>
 
-    <div class="container">
-        <div class="status" id="status"></div>
-        <div class="board">
-            <!-- Chessboard cells will be generated here -->
-        </div>
+    <div id="game-options">
+        <button id="play-person">Play vs Person</button>
+        <div class="br"></div>
+        <button id="play-bot">Play vs Bot</button>
+    </div>
+    <div id="game" style="display:none;">
+        <h1 id="status">Player white's turn</h1>
+        <div class="board"></div>
         <button id="resetButton">Reset Game</button>
+        <div class="br"></div>
+        <button id="backButton">Back to Options</button>
     </div>
     <script src="chess.js"></script>
 

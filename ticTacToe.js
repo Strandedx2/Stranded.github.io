@@ -1,59 +1,125 @@
-const cells = document.querySelectorAll('.cell');
+const boardElement = document.querySelector('.board');
 const statusDisplay = document.getElementById('status');
 const resetButton = document.getElementById('resetButton');
+const backButton = document.getElementById('backButton');
+const gameOptions = document.getElementById('game-options');
+const gameElement = document.getElementById('game');
+const playPersonButton = document.getElementById('play-person');
+const playBotButton = document.getElementById('play-bot');
+
+let cells;
 let currentPlayer = 'X';
 let gameActive = true;
-const winningCombinations = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-];
+let gameMode = 'person'; // 'person' or 'bot'
 
-function handleClick(event) {
-    const cell = event.target;
-    const cellIndex = cell.getAttribute('data-index');
+// Event Listeners
+playPersonButton.addEventListener('click', () => startGame('person'));
+playBotButton.addEventListener('click', () => startGame('bot'));
+resetButton.addEventListener('click', resetGame);
+backButton.addEventListener('click', showOptions);
 
-    if (cell.textContent !== '' || !gameActive) return;
+function startGame(mode) {
+    gameMode = mode;
+    gameOptions.style.display = 'none';
+    gameElement.style.display = 'block';
+    createBoard();
+    updateStatus();
+}
 
-    cell.textContent = currentPlayer;
-    if (checkWin()) {
-        statusDisplay.textContent = `${currentPlayer} wins!`;
-        gameActive = false;
-    } else if (isBoardFull()) {
-        statusDisplay.textContent = "It's a draw!";
-        gameActive = false;
-    } else {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
+function createBoard() {
+    boardElement.innerHTML = '';
+    cells = [];
+    for (let i = 0; i < 9; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.addEventListener('click', () => handleCellClick(i));
+        boardElement.appendChild(cell);
+        cells.push(cell);
     }
 }
 
+function handleCellClick(index) {
+    if (!gameActive || cells[index].textContent) return;
+
+    cells[index].textContent = currentPlayer;
+    if (checkWin()) {
+        updateStatus(`${currentPlayer} wins!`);
+        gameActive = false;
+        return;
+    }
+    if (isBoardFull()) {
+        updateStatus('It\'s a draw!');
+        gameActive = false;
+        return;
+    }
+
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    updateStatus();
+
+    if (gameMode === 'bot' && currentPlayer === 'O') {
+        setTimeout(botMove, 500);
+    }
+}
+
+function updateStatus(message = `${currentPlayer}'s turn`) {
+    statusDisplay.textContent = message;
+}
+
+function botMove() {
+    let availableCells = cells.map((cell, index) => cell.textContent === '' ? index : null).filter(index => index !== null);
+    if (availableCells.length === 0) return;
+
+    const randomIndex = availableCells[Math.floor(Math.random() * availableCells.length)];
+    cells[randomIndex].textContent = 'O';
+
+    if (checkWin()) {
+        updateStatus('Bot wins!');
+        gameActive = false;
+        return;
+    }
+    if (isBoardFull()) {
+        updateStatus('It\'s a draw!');
+        gameActive = false;
+        return;
+    }
+
+    currentPlayer = 'X';
+    updateStatus();
+}
+
 function checkWin() {
-    return winningCombinations.some(combination => {
-        return combination.every(index => {
-            return cells[index].textContent === currentPlayer;
-        });
+    const winningCombos = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    return winningCombos.some(combo => {
+        const [a, b, c] = combo;
+        return cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent;
     });
 }
 
 function isBoardFull() {
-    return [...cells].every(cell => cell.textContent !== '');
+    return cells.every(cell => cell.textContent);
 }
 
-function resetBoard() {
-    cells.forEach(cell => cell.textContent = '');
+function resetGame() {
     currentPlayer = 'X';
     gameActive = true;
-    statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
+    updateStatus();
+    createBoard();
+    if (gameMode === 'bot' && currentPlayer === 'O') {
+        setTimeout(botMove, 500);
+    }
 }
 
-resetButton.addEventListener('click', resetBoard);
-cells.forEach(cell => cell.addEventListener('click', handleClick));
-
-// Initialize the game status
-statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
+function showOptions() {
+    gameElement.style.display = 'none';
+    gameOptions.style.display = 'block';
+}

@@ -28,19 +28,19 @@ body {
 
 .board {
     display: grid;
-    grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
+    grid-template-columns: repeat(8, 100px);
+    grid-template-rows: repeat(8, 100px);
     gap: 0;
-    width: 400px;
-    height: 400px;
+    width: 801.34px;
+    height: 801px;
     border: 1px solid #333;
     position: relative;
 }
 
 .cell {
     position: relative; /* Ensure pieces are positioned relative to their cells */
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,7 +48,7 @@ body {
 }
 
 .piece {
-    font-size: 47px;
+    font-size: 80px;
     position: absolute; /* Absolute positioning for smooth transitions */
     transition: transform 0.3s ease; /* Add transition for movement */
     z-index: 10; /* Ensure pieces are above the board */
@@ -66,8 +66,9 @@ body {
 
 
 button#resetButton {
+    margin-top: 20px;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 3em;
     background-color: #007bff;
     color: white;
     border: none;
@@ -77,4 +78,47 @@ button#resetButton {
 
 button#resetButton:hover {
     background-color: #0056b3;
+}
+
+
+button#play-person {
+    padding: 10px 20px;
+    font-size: 8em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+button#play-person:hover {
+    background-color: #0056b3;
+}
+
+
+button#play-bot {
+    padding: 10px 20px;
+    font-size: 8em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button#play-bot:hover {
+    background-color: #0056b3;
+}
+
+button#backButton {
+    padding: 10px 20px;
+    font-size: 2em;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
