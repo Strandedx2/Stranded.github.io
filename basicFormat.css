@@ -30,6 +30,11 @@ p {
     font-size: 200%;
 }
 
+.br {
+    display: block;
+    margin-bottom: 2em;
+}
+
 footer {
     background-color: #212532;
     color: white;
@@ -59,7 +64,6 @@ footer {
     display: inline-block;
     font-size: 16px;
     border-radius: 47%;
-    margin: 10px;
     transition-duration: 0.4s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }

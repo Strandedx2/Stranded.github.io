@@ -82,15 +82,40 @@ function selectCell(cell) {
 }
 
 // Move a piece if the move is valid
+// function movePiece(fromCell, toCell) {
+//     const fromPiece = fromCell.querySelector('.piece');
+//     if (fromPiece && isMoveValid(fromCell, toCell, fromPiece.textContent)) {
+//         toCell.innerHTML = '';
+//         toCell.appendChild(fromPiece);
+//         fromCell.innerHTML = '';
+//         switchPlayer();
+//     }
+// }
+
 function movePiece(fromCell, toCell) {
     const fromPiece = fromCell.querySelector('.piece');
+
     if (fromPiece && isMoveValid(fromCell, toCell, fromPiece.textContent)) {
-        toCell.innerHTML = '';
-        toCell.appendChild(fromPiece);
-        fromCell.innerHTML = '';
-        switchPlayer();
+        const fromRect = fromCell.getBoundingClientRect();
+        const toRect = toCell.getBoundingClientRect();
+
+        const deltaX = toRect.left - fromRect.left;
+        const deltaY = toRect.top - fromRect.top;
+
+        // Move the piece with a smooth transition
+        fromPiece.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+
+        // Wait for the transition to complete before actually moving the piece in the DOM
+        setTimeout(() => {
+            toCell.innerHTML = '';
+            toCell.appendChild(fromPiece);
+            fromPiece.style.transform = ''; // Reset the transform for the next move
+            fromCell.innerHTML = '';
+            switchPlayer();
+        }, 300); // Match the timeout duration with the CSS transition duration
     }
 }
+
 
 // Validate the move based on piece type and rules
 function isMoveValid(fromCell, toCell, pieceSymbol) {
