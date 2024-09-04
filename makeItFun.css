@@ -3,14 +3,50 @@ span {
     background-color: lime;
   }
 
+.box {
+    background-color: tomato;
+    color: white;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+  }
+
 p {
     font-weight: bold;
     color: blue;
     font-size: 200%;
   }
 
-.box {
-    width: 500px;
-    width: calc(100% - 50px);
-  }
 
+.navigation {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #212532;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transition-delay: 0.8;
+}
+
+.navigation.active {
+    width: 200px;
+    height: 200px;
+    transition-delay: 0s;
+}
+
+.navigation span {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+}
