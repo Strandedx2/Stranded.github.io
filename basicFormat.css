@@ -1,3 +1,15 @@
+header {
+    background-color: #212532;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     /* background-color: #212532;
@@ -5,6 +17,13 @@ body {
     text-align: center;
   }
   
+h1 {
+    font-size: 300%;
+    /* color: blue; */
+    font-weight: bold;
+    margin: 20px;
+}
+
 p {
     font-weight: bold;
     /* color: blue; */
@@ -30,17 +49,17 @@ footer {
   }
 
 
-
   .button {
     background-color: transparent; /* Green */
     border: 2px solid green;
-    color: black;
+    color: green;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border-radius: 47%;
+    margin: 10px;
     transition-duration: 0.4s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
@@ -50,3 +69,70 @@ footer {
         color: white;
     }
 
+
+    .home {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        position:absolute;
+        top: 20px;
+        right: 40px;
+    }
+
+    .homeButton {
+        background-color: transparent; /* Green */
+        border: 2px solid white;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 47%;
+        transition-duration: 0.4s;
+      }
+    
+    .homeButton:hover {
+        background-color: blueviolet;
+        color: white;
+    }
+
+    .arrow {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transition: border-color 0.4s ease;
+      }
+
+      .homeButton:hover .arrow {
+        border-color: white;
+
+      }
+
+      .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+      
+      .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+      }
+      
+      .up {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+      }
+      
+      .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+      
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
