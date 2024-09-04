@@ -13,12 +13,6 @@ span {
     text-align: center;
   }
 
-p {
-    font-weight: bold;
-    color: blue;
-    font-size: 200%;
-  }
-
 
 .navigation {
     position: relative;
@@ -50,3 +44,18 @@ p {
     background: #fff;
     border-radius: 50%;
 }
+
+.big {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+  

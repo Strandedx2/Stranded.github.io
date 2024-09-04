@@ -1,82 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
         <link rel="stylesheet" type="text/css" href="makeItFun.css">
-        <!-- <style>
-            span {
-    border: 1px solid black;
-    background-color: lime;
-  }
-
-.box {
-    background-color: tomato;
-    color: white;
-    border: 2px solid black;
-    margin: 20px;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-  }
-
-p {
-    font-weight: bold;
-    color: blue;
-    font-size: 200%;
-  }
-
-
-.navigation {
-    position: relative;
-    width: 70px;
-    height: 70px;
-    background: #212532;
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    transition-delay: 0.8;
-}
-
-.navigation:hover {
-    width: 200px;
-    height: 200px;
-    transition-delay: 0s;
-}
-
-.navigation span {
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    border-radius: 50%;
-}
-
-
-        </style> -->
+        <link rel="stylesheet" type="text/css" href="basicFormat.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Strandedx2.github.io</title>
-    </head>
+        <!-- <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+        </script>
+        <script> 
+            $(function(){
+              $("#footer").load("footer.html"); 
+            });
+        </script>  -->
+
 <body>
 <h1>Hello World</h1>
 <p>My name is Strandedx2.</p>
 
+<div class="center">
 <p class="box">I'm hosted with GitHub Pages.</p>
-
-
-<div class="navigation">
-    <span style="--i:0;--x:-1;--y:0;"> <ion-icon name="camera-outline">
-        </ion-icon>
-    </span>
-    <span style="--i:8;--x:1;--y:-1;"> <ion-icon name="time-outline">
-        </ion-icon>
-    </span>
 </div>
+
+
+<div class="center">
+    <h2>Fun things to look at</h2>
+    <a href="doggos.html">
+        <button type="button" class="button">Doggos</button>
+    </a>
+</div>
+
+
+<!-- <div class="navigation">
+    <span style="--i:0;--x:-1;--y:0;"> <ion-icon class="big" name="camera-outline"></ion-icon>
+    </span>
+    <span style="--i:8;--x:1;--y:-1;"> <ion-icon class="big" name="time-outline">
+        </ion-icon>
+    </span>
+</div>  -->
+
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<!-- <div id="footer"></div> -->
+<%- include("footer.html")%>
 </body>
+
+
+
 </html>
