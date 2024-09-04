@@ -48,7 +48,7 @@ body {
 }
 
 .piece {
-    font-size: 50px;
+    font-size: 47px;
     position: absolute; /* Absolute positioning for smooth transitions */
     transition: transform 0.3s ease; /* Add transition for movement */
     z-index: 10; /* Ensure pieces are above the board */
