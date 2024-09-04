@@ -579,6 +579,8 @@ function movePiece(fromCell, toCell) {
     return false;
 }
 
+
+
 // Validate the move based on piece type and rules
 function isMoveValid(fromCell, toCell, pieceSymbol) {
     const fromRow = parseInt(fromCell.getAttribute('data-row'));
@@ -753,3 +755,4 @@ resetButton.addEventListener('click', resetBoard);
 
 // Initialize board
 createBoard();
+

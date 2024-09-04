@@ -50,9 +50,14 @@ body {
 .piece {
     font-size: 80px;
     position: absolute; /* Absolute positioning for smooth transitions */
-    transition: transform 0.3s ease; /* Add transition for movement */
+    transition: transform 0.3s ease;
     z-index: 10; /* Ensure pieces are above the board */
     cursor: pointer;
+}
+
+
+.piece:hover {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 
