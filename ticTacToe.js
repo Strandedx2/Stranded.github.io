@@ -24,6 +24,7 @@ function startGame(mode) {
     gameElement.style.display = 'block';
     createBoard();
     updateStatus();
+    resetGame();
 }
 
 function createBoard() {
