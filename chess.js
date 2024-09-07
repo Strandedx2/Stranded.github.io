@@ -702,9 +702,10 @@ function botMove() {
         if (filteredMoves.length > 0) {
             const randomMove = filteredMoves[Math.floor(Math.random() * filteredMoves.length)];
             movePiece(randomMove.fromCell, randomMove.toCell);
-            switchPlayer();
+            
         }
     }
+    switchPlayer();
 }
 
 // Switch player turn
@@ -715,9 +716,9 @@ function switchPlayer() {
     currentPlayer = currentPlayer === 'white' ? 'black' : 'white';
     statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
 
-    if (gameMode === 'bot' && currentPlayer === 'black') {
-        setTimeout(botMove, 500); // Delay for bot move
-    }
+    // if (gameMode === 'bot' && currentPlayer === 'black') {
+    //     setTimeout(botMove, 5); // Delay for bot move
+    // }
 }
 
 // Reset the board to the initial state

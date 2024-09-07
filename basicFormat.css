@@ -7,6 +7,7 @@ header {
     left: 0;
     top: 0;
     width: 100%;
+    margin-bottom: 50px;
   }
   
 
@@ -18,7 +19,7 @@ body {
   }
   
 h1 {
-    font-size: 300%;
+    font-size: 200%;
     /* color: blue; */
     font-weight: bold;
     margin: 20px;
@@ -27,12 +28,17 @@ h1 {
 p {
     font-weight: bold;
     /* color: blue; */
-    font-size: 200%;
+    font-size: 100%;
 }
 
 .br {
     display: block;
     margin-bottom: 2em;
+}
+
+.mediumBr {
+    display: block;
+    margin-bottom: 6em;
 }
 
 .largeBr {
