@@ -17,7 +17,7 @@
   
   .flip-box:active .flip-box-inner {
     transform: rotatex(360deg);
-    transition: 2s;
+    transition: 3s;
     /* transition-delay: 0.5s; */
   }
   

@@ -28,38 +28,21 @@ body {
 
 .board {
     display: grid;
-    grid-template-columns: repeat(8, 100px);
-    grid-template-rows: repeat(8, 100px);
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
     gap: 0;
-    width: 801.34px;
-    height: 801px;
-    border: 1px solid #333;
-    position: relative;
+    border: 2px solid #333;
 }
 
 .cell {
-    position: relative; /* Ensure pieces are positioned relative to their cells */
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 24px;
-}
-
-.piece {
-    font-size: 80px;
-    position: absolute; /* Absolute positioning for smooth transitions */
-    transition: transform 0.3s ease;
-    z-index: 10; /* Ensure pieces are above the board */
+    align-items: center;
+    font-size: 2em;
     cursor: pointer;
 }
-
-
-.piece:hover {
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
 
 .cell.white {
     background-color: #f0d9b5;
@@ -69,61 +52,29 @@ body {
     background-color: #b58863;
 }
 
+.piece {
+    font-size: 50px;
+    position: absolute;
+    z-index: 10;
+}
+
+.piece:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
 
 button#resetButton {
-    margin-top: 20px;
     padding: 10px 20px;
-    font-size: 3em;
+    font-size: 1em;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Add transition for background color */
 }
 
 button#resetButton:hover {
     background-color: #0056b3;
 }
 
-
-button#play-person {
-    padding: 10px 20px;
-    font-size: 8em;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-
-button#play-person:hover {
-    background-color: #0056b3;
-}
-
-
-button#play-bot {
-    padding: 10px 20px;
-    font-size: 8em;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-button#play-bot:hover {
-    background-color: #0056b3;
-}
-
-button#backButton {
-    padding: 10px 20px;
-    font-size: 2em;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
