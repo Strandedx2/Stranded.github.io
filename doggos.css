@@ -17,7 +17,7 @@
   
   .flip-box:active .flip-box-inner {
     transform: rotatex(360deg);
-    transition: 3s;
+    transition: 3s ease-in-out;
     /* transition-delay: 0.5s; */
   }
   
@@ -40,3 +40,6 @@
     transform: rotatex(180deg);
   }
 
+  body {
+    cursor: url('dogCursor.png'), auto;
+  }
